@@ -22,6 +22,11 @@ namespace Tarea_de_investigacion_ReproductorMusical
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //esto es un comentario
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }
