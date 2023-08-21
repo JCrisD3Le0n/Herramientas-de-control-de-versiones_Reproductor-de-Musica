@@ -27,7 +27,7 @@ namespace Tarea_de_investigacion_ReproductorMusical
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            //segundo comentario en la aplicacion 
         }
 
         private void button1_Click(object sender, EventArgs e)
