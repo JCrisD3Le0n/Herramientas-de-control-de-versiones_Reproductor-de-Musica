@@ -29,5 +29,10 @@ namespace Tarea_de_investigacion_ReproductorMusical
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
