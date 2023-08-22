@@ -23,6 +23,7 @@ namespace Tarea_de_investigacion_ReproductorMusical
         private void Form1_Load(object sender, EventArgs e)
         {
             //hola como estan
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace Tarea_de_investigacion_ReproductorMusical
             //segundo comentario en la aplicacion 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
