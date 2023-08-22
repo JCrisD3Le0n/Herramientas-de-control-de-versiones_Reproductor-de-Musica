@@ -29,7 +29,6 @@ namespace Tarea_de_investigacion_ReproductorMusical
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
@@ -87,7 +86,6 @@ namespace Tarea_de_investigacion_ReproductorMusical
             this.btnPlay.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Image = ((System.Drawing.Image)(resources.GetObject("btnPlay.Image")));
             this.btnPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnPlay.Location = new System.Drawing.Point(735, 326);
             this.btnPlay.Name = "btnPlay";
@@ -117,9 +115,9 @@ namespace Tarea_de_investigacion_ReproductorMusical
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(675, 74);
+            this.pictureBox2.Location = new System.Drawing.Point(648, 32);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(212, 229);
+            this.pictureBox2.Size = new System.Drawing.Size(239, 235);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
