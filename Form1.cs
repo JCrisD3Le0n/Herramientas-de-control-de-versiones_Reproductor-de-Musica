@@ -25,7 +25,7 @@ namespace Tarea_de_investigacion_ReproductorMusical
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] canciones = Directory.GetFiles(rutaMusical, "*.mp3"); // Arreglo que contendrá la lista de nombres
-            //La siguiente estructura enlista los elemntos del arreglo canciones en el listBoxMusic
+            //La siguiente estructura enlista los elementos del arreglo canciones en el listBoxMusic
             foreach (string cancion in canciones)
             {
                 string nombreCancion = Path.GetFileName(cancion);
@@ -44,15 +44,24 @@ namespace Tarea_de_investigacion_ReproductorMusical
         }
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            Reproducir();
+        }
+        void Reproducir()
+        {
             string nombreCancion = listBoxMusic.SelectedItem.ToString();
             string rutaCompleta = Path.Combine(rutaMusical, nombreCancion);
             if (waveOut != null)
             {
                 waveOut.Stop(); // Detener la reproducción actual, si la hay
-                AudioFileReader cancion = new AudioFileReader(rutaCompleta);
-                waveOut.Init(cancion);
-                waveOut.Play();
+                AudioFileReader cancion = new AudioFileReader(rutaCompleta); //Variable que almacena el archivo de audio
+                waveOut.Init(cancion);//Inicializa la instancia de reproducción.
+                waveOut.Play();//Reproduce el audio
             }
+        }
+
+        private void listBoxMusic_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Reproducir();
         }
     }
 }
