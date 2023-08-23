@@ -15,6 +15,8 @@ namespace Tarea_de_investigacion_ReproductorMusical
 {
     public partial class Form1 : Form
     {
+        string rutaMusical = @"Musica\"; //Ruta del directorio que contiene la música
+        private WaveOutEvent waveOut;
         public Form1()
         {
             InitializeComponent();
@@ -22,10 +24,15 @@ namespace Tarea_de_investigacion_ReproductorMusical
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //hola como estan
-           
+            string[] canciones = Directory.GetFiles(rutaMusical, "*.mp3"); // Arreglo que contendrá la lista de nombres
+            //La siguiente estructura enlista los elemntos del arreglo canciones en el listBoxMusic
+            foreach (string cancion in canciones)
+            {
+                string nombreCancion = Path.GetFileName(cancion);
+                listBoxMusic.Items.Add(nombreCancion);
+            }
+            waveOut = new WaveOutEvent();
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
             //segundo comentario en la aplicacion 
@@ -34,6 +41,18 @@ namespace Tarea_de_investigacion_ReproductorMusical
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            string nombreCancion = listBoxMusic.SelectedItem.ToString();
+            string rutaCompleta = Path.Combine(rutaMusical, nombreCancion);
+            if (waveOut != null)
+            {
+                waveOut.Stop(); // Detener la reproducción actual, si la hay
+                AudioFileReader cancion = new AudioFileReader(rutaCompleta);
+                waveOut.Init(cancion);
+                waveOut.Play();
+            }
         }
     }
 }

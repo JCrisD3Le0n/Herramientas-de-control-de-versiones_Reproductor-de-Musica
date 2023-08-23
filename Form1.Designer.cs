@@ -34,10 +34,10 @@ namespace Tarea_de_investigacion_ReproductorMusical
             this.btnPausa = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.panelLateral = new System.Windows.Forms.Panel();
+            this.listBoxMusic = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.pictureImageAlbum = new System.Windows.Forms.PictureBox();
-            this.listBoxMusic = new System.Windows.Forms.ListBox();
             this.panelLateral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImageAlbum)).BeginInit();
@@ -52,19 +52,22 @@ namespace Tarea_de_investigacion_ReproductorMusical
             this.btnPlay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnPlay.Location = new System.Drawing.Point(494, 601);
+            this.btnPlay.Location = new System.Drawing.Point(329, 391);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Size = new System.Drawing.Size(54, 47);
+            this.btnPlay.Size = new System.Drawing.Size(36, 31);
             this.btnPlay.TabIndex = 4;
             this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnPausa
             // 
             this.btnPausa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPausa.BackgroundImage")));
             this.btnPausa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPausa.Location = new System.Drawing.Point(426, 601);
+            this.btnPausa.Location = new System.Drawing.Point(284, 391);
+            this.btnPausa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPausa.Name = "btnPausa";
-            this.btnPausa.Size = new System.Drawing.Size(59, 47);
+            this.btnPausa.Size = new System.Drawing.Size(39, 31);
             this.btnPausa.TabIndex = 5;
             this.btnPausa.UseVisualStyleBackColor = true;
             // 
@@ -72,9 +75,10 @@ namespace Tarea_de_investigacion_ReproductorMusical
             // 
             this.btnStop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStop.BackgroundImage")));
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStop.Location = new System.Drawing.Point(555, 601);
+            this.btnStop.Location = new System.Drawing.Point(370, 391);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(56, 47);
+            this.btnStop.Size = new System.Drawing.Size(37, 31);
             this.btnStop.TabIndex = 6;
             this.btnStop.UseVisualStyleBackColor = true;
             // 
@@ -84,54 +88,58 @@ namespace Tarea_de_investigacion_ReproductorMusical
             this.panelLateral.Controls.Add(this.listBoxMusic);
             this.panelLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateral.Location = new System.Drawing.Point(0, 0);
+            this.panelLateral.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelLateral.Name = "panelLateral";
-            this.panelLateral.Size = new System.Drawing.Size(250, 692);
+            this.panelLateral.Size = new System.Drawing.Size(167, 450);
             this.panelLateral.TabIndex = 9;
             this.panelLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(101)))), ((int)(((byte)(187)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(250, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 105);
-            this.panel1.TabIndex = 10;
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(613, 601);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(355, 69);
-            this.trackBar1.TabIndex = 11;
-            // 
-            // pictureImageAlbum
-            // 
-            this.pictureImageAlbum.Image = ((System.Drawing.Image)(resources.GetObject("pictureImageAlbum.Image")));
-            this.pictureImageAlbum.Location = new System.Drawing.Point(383, 127);
-            this.pictureImageAlbum.Name = "pictureImageAlbum";
-            this.pictureImageAlbum.Size = new System.Drawing.Size(612, 434);
-            this.pictureImageAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureImageAlbum.TabIndex = 7;
-            this.pictureImageAlbum.TabStop = false;
             // 
             // listBoxMusic
             // 
             this.listBoxMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(101)))), ((int)(((byte)(187)))));
             this.listBoxMusic.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBoxMusic.FormattingEnabled = true;
-            this.listBoxMusic.ItemHeight = 20;
-            this.listBoxMusic.Location = new System.Drawing.Point(9, 185);
+            this.listBoxMusic.Location = new System.Drawing.Point(6, 120);
+            this.listBoxMusic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxMusic.Name = "listBoxMusic";
-            this.listBoxMusic.Size = new System.Drawing.Size(235, 320);
+            this.listBoxMusic.Size = new System.Drawing.Size(157, 208);
             this.listBoxMusic.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(101)))), ((int)(((byte)(187)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(167, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(542, 68);
+            this.panel1.TabIndex = 10;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(409, 391);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(237, 45);
+            this.trackBar1.TabIndex = 11;
+            // 
+            // pictureImageAlbum
+            // 
+            this.pictureImageAlbum.Image = ((System.Drawing.Image)(resources.GetObject("pictureImageAlbum.Image")));
+            this.pictureImageAlbum.Location = new System.Drawing.Point(255, 83);
+            this.pictureImageAlbum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureImageAlbum.Name = "pictureImageAlbum";
+            this.pictureImageAlbum.Size = new System.Drawing.Size(408, 282);
+            this.pictureImageAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureImageAlbum.TabIndex = 7;
+            this.pictureImageAlbum.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1063, 692);
+            this.ClientSize = new System.Drawing.Size(709, 450);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLateral);
@@ -139,7 +147,6 @@ namespace Tarea_de_investigacion_ReproductorMusical
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPausa);
             this.Controls.Add(this.btnPlay);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Reproductor de Musica";
             this.Load += new System.EventHandler(this.Form1_Load);
