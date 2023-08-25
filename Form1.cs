@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using NAudio.Wave;//Esta biblioteca hace posible el hacer uso de audios
-using NAudio;
+﻿using NAudio.Wave;//Esta biblioteca hace posible el hacer uso de audios
+using System;
 using System.IO;//Biblioteca que permite el manejo, uso de entrada y salida de archivos
-using TagLib;//Biblioteca para trabajar con metadatos de audio
+using System.Windows.Forms;
 namespace Tarea_de_investigacion_ReproductorMusical
 {
     public partial class Form1 : Form
     {
+        
         string rutaMusical = @"Musica\"; //Ruta del directorio que contiene la música
         private WaveOutEvent waveOut;
+
+        private int indice;// Variable de control de las portadas del album
         public Form1()
         {
             InitializeComponent();
+            indice = 0;// Inicializar desde 0
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,24 +39,38 @@ namespace Tarea_de_investigacion_ReproductorMusical
         }
         private void btnPlay_Click(object sender, EventArgs e)
         {
+            indice++;
+            if (indice >= 3) //Ciclo de cambio de imagenes para cada cancion.
+                indice = 0;
+            lblimagenes.ImageIndex = indice; // Repertorio de imagenes almacenadas en el ciclo de imagenes. 
+
             Reproducir();
-        }
-        void Reproducir()
-        {
-            string nombreCancion = listBoxMusic.SelectedItem.ToString();
-            string rutaCompleta = Path.Combine(rutaMusical, nombreCancion);
-            if (waveOut != null)
+
+            void Reproducir()
             {
-                waveOut.Stop(); // Detener la reproducción actual, si la hay
-                AudioFileReader cancion = new AudioFileReader(rutaCompleta); //Variable que almacena el archivo de audio
-                waveOut.Init(cancion);//Inicializa la instancia de reproducción.
-                waveOut.Play();//Reproduce el audio
+                string nombreCancion = listBoxMusic.SelectedItem.ToString();
+                string rutaCompleta = Path.Combine(rutaMusical, nombreCancion);
+                if (waveOut != null)
+                {
+                    waveOut.Stop(); // Detener la reproducción actual, si la hay
+                    AudioFileReader cancion = new AudioFileReader(rutaCompleta); //Variable que almacena el archivo de audio
+                    waveOut.Init(cancion);//Inicializa la instancia de reproducción.
+                    waveOut.Play();//Reproduce el audio
+                }
             }
+
         }
 
         private void listBoxMusic_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Reproducir();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        }
+      
+
     }
 }
+  
+
